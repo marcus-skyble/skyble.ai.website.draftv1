@@ -18,6 +18,16 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Repository Setup
+
+Before deploying, ensure GitHub Pages is properly configured:
+
+1. Go to the repository settings on GitHub
+2. Navigate to Pages section
+3. Under "Build and deployment", select:
+   - Source: "GitHub Actions"
+4. Save the settings
+
 ### Docker Deployment
 
 The project includes Docker configuration for easy deployment. All Docker-related files are in the `docker/` directory, but you can use the wrapper script from any directory.
