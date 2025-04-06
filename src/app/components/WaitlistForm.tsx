@@ -79,7 +79,7 @@ export default function WaitlistForm() {
           </div>
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Thank you for joining our waitlist</h3>
           <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-            We'll notify you when Skyble X is ready to launch.
+            We&apos;ll notify you when Skyble X is ready to launch.
           </p>
           <button 
             onClick={() => setSubmitted(false)}
