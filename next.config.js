@@ -7,14 +7,14 @@ const nextConfig = {
   },
   // Set basePath for GitHub Pages
   basePath: process.env.GITHUB_PAGES === 'true' 
-    ? '/skyble.ai.website.draftv1'
+    ? '/website.dev'
     : (process.env.NEXT_PUBLIC_BASE_PATH || ''),
   images: {
     unoptimized: true,
   },
   // Ensure public directory files are properly accessible
   assetPrefix: process.env.GITHUB_PAGES === 'true'
-    ? '/skyble.ai.website.draftv1'
+    ? '/website.dev'
     : (process.env.NEXT_PUBLIC_BASE_PATH || ''),
 };
 

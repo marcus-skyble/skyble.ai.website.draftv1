@@ -7,7 +7,10 @@ export default function Logo({ className = "" }: { className?: string }) {
   // For static rendering (client-side), we need to check at runtime
   if (typeof window !== 'undefined') {
     // Check if we're on GitHub Pages (contains the repository name in the path)
-    if (window.location.pathname.includes('/skyble.ai.website.draftv1')) {
+    if (window.location.pathname.includes('/website.dev')) {
+      basePath = '/website.dev';
+    } else if (window.location.pathname.includes('/skyble.ai.website.draftv1')) {
+      // Support for the old repository path during transition
       basePath = '/skyble.ai.website.draftv1';
     }
   } else {

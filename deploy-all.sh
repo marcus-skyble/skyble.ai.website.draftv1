@@ -22,6 +22,10 @@ IMAGE_NAME="skyble-website"
 TAG="latest"
 FULL_IMAGE_NAME="${REGISTRY}/${IMAGE_NAME}:${TAG}"
 
+# GitHub repository information
+GITHUB_REPO="Skyble-x/website.dev"
+GITHUB_PAGES_URL="https://skyble-x.github.io/website.dev/"
+
 # Log function with timestamps
 log() {
   local level=$1
@@ -260,7 +264,7 @@ deploy_to_github() {
   
   # Push to GitHub
   log "INFO" "Pushing to GitHub..."
-  git push origin main
+  git push skyble main
   
   if [ $? -ne 0 ]; then
     log "ERROR" "Failed to push to GitHub"
@@ -271,7 +275,7 @@ deploy_to_github() {
   
   # Check the GitHub Actions workflow status
   log "INFO" "Checking GitHub Actions workflow status..."
-  local run_id=$(gh run list -R marcus-skyble/skyble.ai.website.draftv1 --limit 1 --json databaseId --jq '.[0].databaseId')
+  local run_id=$(gh run list -R "$GITHUB_REPO" --limit 1 --json databaseId --jq '.[0].databaseId')
   
   if [ -z "$run_id" ]; then
     log "ERROR" "Failed to get the latest workflow run ID"
@@ -282,18 +286,18 @@ deploy_to_github() {
   log "INFO" "Waiting for workflow to complete..."
   
   # Wait for the workflow to complete
-  gh run watch -R marcus-skyble/skyble.ai.website.draftv1 "$run_id"
+  gh run watch -R "$GITHUB_REPO" "$run_id"
   
   # Check if the workflow succeeded
-  local status=$(gh run view -R marcus-skyble/skyble.ai.website.draftv1 "$run_id" --json conclusion --jq '.conclusion')
+  local status=$(gh run view -R "$GITHUB_REPO" "$run_id" --json conclusion --jq '.conclusion')
   
   if [ "$status" = "success" ]; then
     log "SUCCESS" "GitHub Pages deployment completed successfully"
-    log "INFO" "Website is now available at: https://marcus-skyble.github.io/skyble.ai.website.draftv1/"
+    log "INFO" "Website is now available at: $GITHUB_PAGES_URL"
   else
     log "ERROR" "GitHub Pages deployment failed with status: $status"
     log "INFO" "Check the workflow logs for more details:"
-    log "INFO" "gh run view -R marcus-skyble/skyble.ai.website.draftv1 $run_id"
+    log "INFO" "gh run view -R $GITHUB_REPO $run_id"
     exit 1
   fi
 }
@@ -316,7 +320,7 @@ main() {
   
   log "SUCCESS" "Deployment completed successfully!"
   log "INFO" "Docker image: ${FULL_IMAGE_NAME}"
-  log "INFO" "GitHub Pages: https://marcus-skyble.github.io/skyble.ai.website.draftv1/"
+  log "INFO" "GitHub Pages: ${GITHUB_PAGES_URL}"
 }
 
 # Run the main function
