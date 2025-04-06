@@ -23,6 +23,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_PAGES: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -52,6 +54,8 @@ jobs:
         run: npm ci
       - name: Build with Next.js
         run: npm run build
+        env:
+          GITHUB_PAGES: true
       - name: Debug directory structure
         run: ls -la && ls -la ./out || echo "Out directory not found"
       - name: Upload artifact

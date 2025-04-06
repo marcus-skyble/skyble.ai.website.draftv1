@@ -1,8 +1,19 @@
 import Image from 'next/image';
 
 export default function Logo({ className = "" }: { className?: string }) {
-  // Use a more flexible approach for base path
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  // Determine the base path for assets based on the environment
+  let basePath = '';
+  
+  // For static rendering (client-side), we need to check at runtime
+  if (typeof window !== 'undefined') {
+    // Check if we're on GitHub Pages (contains the repository name in the path)
+    if (window.location.pathname.includes('/skyble.ai.website.draftv1')) {
+      basePath = '/skyble.ai.website.draftv1';
+    }
+  } else {
+    // For server-side rendering, use the environment variable
+    basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  }
   
   return (
     <div className={`relative ${className}`}>
