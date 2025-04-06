@@ -90,6 +90,63 @@ export default function Home() {
     },
   ];
 
+  // Feature descriptions with tooltips
+  const featureDescriptions = {
+    "Deployment & MDM": "Zero-touch deployment with Apple Business Manager and Mobile Device Management for seamless setup of new devices",
+    "Security": "Comprehensive security policies, encryption, and remote lock & wipe capabilities for data protection",
+    "Device Automation": "Automated app deployment, device grouping, and basic configuration management",
+    "Advanced Automation & Scripting": "Bulk configuration, custom scripts, automated alerts, and granular restrictions for complete device control",
+    "Identity & Access": "Single Sign-On (SSO), managed Apple IDs, Multi-Factor Authentication (MFA), and role-based access control",
+    "Network Policies": "VPN configuration, certificate management, and secure Wi-Fi access management",
+    "App Lifecycle": "Software updates, application blacklisting/whitelisting, and license management",
+    "Reporting & Analytics": "Detailed usage reports, inventory tracking, and compliance monitoring",
+    "Support & Troubleshooting": "Remote support access, diagnostics, and dedicated helpdesk for rapid issue resolution",
+    "Backup & Recovery": "Automated cloud backup, recovery options, and disaster recovery planning"
+  };
+
+  // Testimonials for social proof
+  const testimonials = [
+    {
+      quote: "Skyble X streamlined our Apple device deployment process from days to minutes. New hires can now unbox and start working immediately.",
+      author: "Sarah Johnson",
+      title: "CTO, CreativeTech Solutions"
+    },
+    {
+      quote: "The security features in Skyble X give us peace of mind while maintaining the user experience our creative team expects from their Apple devices.",
+      author: "Michael Chen",
+      title: "IT Director, DesignHub Studio"
+    },
+    {
+      quote: "With Skyble X, we finally have visibility into our Apple ecosystem with clear reporting and proactive management, all at a predictable cost.",
+      author: "Lena Rodriguez",
+      title: "COO, Innovate Partners"
+    }
+  ];
+
+  // FAQ items
+  const faqItems = [
+    {
+      question: "How does Skyble X differ from other MDM solutions?",
+      answer: "Skyble X is specifically designed for Apple devices with a focus on simplicity and automation. Unlike generic MDM solutions, we provide specialized Apple expertise, zero-touch deployment, and a comprehensive service that includes not just management but also support, security, and analytics."
+    },
+    {
+      question: "Can I upgrade between service tiers as my business grows?",
+      answer: "Absolutely! Skyble X is designed to scale with your business. You can start with X1 - Ground Control and seamlessly upgrade to X2 - Take Off or X3 - Cruise as your needs evolve, with no disruption to your users or operations."
+    },
+    {
+      question: "How is data protected in Skyble X?",
+      answer: "Skyble X employs enterprise-grade security including device encryption, secure authentication, remote lock & wipe capabilities, and compliance monitoring. All data transmissions are encrypted, and we adhere to industry best practices for data protection and privacy compliance."
+    },
+    {
+      question: "What kind of support is included in each tier?",
+      answer: "X1 includes basic setup support, X2 adds technical guidance for admins, and X3 provides comprehensive support including remote troubleshooting, helpdesk access for all users, and strategic IT planning through quarterly business reviews."
+    },
+    {
+      question: "How quickly can we deploy Skyble X across our organization?",
+      answer: "Most organizations can be fully onboarded within 10 business days of signing. This includes tenant setup, policy configuration, and initial device enrollment. New devices can be deployed instantly after setup with zero-touch provisioning."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Header */}
@@ -98,15 +155,18 @@ export default function Home() {
           <div className="flex justify-between items-center">
             <Logo className="h-9" />
             <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-gray-600 hover:text-sky-600 dark:text-gray-300 dark:hover:text-sky-400 text-sm font-medium transition-colors">Features</a>
-              <a href="#" className="text-gray-600 hover:text-sky-600 dark:text-gray-300 dark:hover:text-sky-400 text-sm font-medium transition-colors">Service Tiers</a>
-              <a href="#" className="text-gray-600 hover:text-sky-600 dark:text-gray-300 dark:hover:text-sky-400 text-sm font-medium transition-colors">Support</a>
-              <a href="#" className="text-gray-600 hover:text-sky-600 dark:text-gray-300 dark:hover:text-sky-400 text-sm font-medium transition-colors">About</a>
+              <a href="#features" className="text-gray-600 hover:text-sky-600 dark:text-gray-300 dark:hover:text-sky-400 text-sm font-medium transition-colors">Features</a>
+              <a href="#service-tiers" className="text-gray-600 hover:text-sky-600 dark:text-gray-300 dark:hover:text-sky-400 text-sm font-medium transition-colors">Service Tiers</a>
+              <a href="#testimonials" className="text-gray-600 hover:text-sky-600 dark:text-gray-300 dark:hover:text-sky-400 text-sm font-medium transition-colors">Testimonials</a>
+              <a href="#faq" className="text-gray-600 hover:text-sky-600 dark:text-gray-300 dark:hover:text-sky-400 text-sm font-medium transition-colors">FAQ</a>
             </nav>
             <div className="flex items-center space-x-4">
-              <button className="md:inline-flex hidden items-center px-4 py-2 bg-sky-600 text-white rounded-full text-sm font-medium hover:bg-sky-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
+              <a 
+                href="#waitlist"
+                className="md:inline-flex hidden items-center px-4 py-2 bg-sky-600 text-white rounded-full text-sm font-medium hover:bg-sky-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+              >
                 Join Waitlist
-              </button>
+              </a>
               <button className="bg-gray-100 dark:bg-gray-800 p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
@@ -197,7 +257,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 sm:py-28 lg:py-32 bg-gray-50 dark:bg-gray-900 relative">
+      <section id="features" className="py-20 sm:py-28 lg:py-32 bg-gray-50 dark:bg-gray-900 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900 -z-10"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -224,90 +284,105 @@ export default function Home() {
           </div>
           
           <div className="flex justify-center mt-12">
-            <a 
-              href="#waitlist" 
+            <button 
+              onClick={() => document.getElementById('tier-comparison')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center px-6 py-3.5 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
             >
               <span>Compare all features</span>
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
-            </a>
+            </button>
           </div>
 
-          <div className="mt-16 overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-              <thead>
+          <div id="tier-comparison" className="mt-16 overflow-x-auto">
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 shadow-sm rounded-lg overflow-hidden">
+              <thead className="bg-gray-100 dark:bg-gray-800">
                 <tr>
-                  <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-6">Feature Set</th>
-                  <th scope="col" className="px-3 py-3.5 text-center text-sm font-semibold text-gray-900 dark:text-white">X1 - Ground Control</th>
-                  <th scope="col" className="px-3 py-3.5 text-center text-sm font-semibold text-gray-900 dark:text-white">X2 - Take Off</th>
-                  <th scope="col" className="px-3 py-3.5 text-center text-sm font-semibold text-gray-900 dark:text-white">X3 - Cruise</th>
+                  <th scope="col" className="py-4 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sm:pl-6">Feature Set</th>
+                  <th scope="col" className="px-3 py-4 text-center text-sm font-semibold text-gray-900 dark:text-white">X1 - Ground Control</th>
+                  <th scope="col" className="px-3 py-4 text-center text-sm font-semibold text-gray-900 dark:text-white">X2 - Take Off</th>
+                  <th scope="col" className="px-3 py-4 text-center text-sm font-semibold text-gray-900 dark:text-white">X3 - Cruise</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Deployment & MDM</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Security</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Device Automation</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Advanced Automation & Scripting</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Identity & Access</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Network Policies</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">App Lifecycle</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Reporting & Analytics</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Support & Troubleshooting</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
-                <tr>
-                  <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6">Backup & Recovery</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">❌</td>
-                  <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">✅</td>
-                </tr>
+              <tbody className="divide-y divide-gray-200 dark:divide-gray-700 bg-white dark:bg-gray-900">
+                {Object.entries(featureDescriptions).map(([feature, description], index) => (
+                  <tr key={feature} className={index % 2 === 0 ? 'bg-gray-50 dark:bg-gray-800/50' : ''}>
+                    <td className="py-4 pl-4 pr-3 text-sm text-gray-900 dark:text-white font-medium sm:pl-6 group relative">
+                      {feature}
+                      <div className="absolute left-0 -mt-2 w-72 bg-white dark:bg-gray-800 p-3 rounded shadow-lg z-10 text-xs hidden group-hover:block">
+                        {description}
+                      </div>
+                    </td>
+                    <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">
+                      {(
+                        feature === "Deployment & MDM" || 
+                        feature === "Security" || 
+                        feature === "Device Automation"
+                      ) ? (
+                        <span className="text-green-500">✅</span>
+                      ) : (
+                        <span className="text-red-500">❌</span>
+                      )}
+                    </td>
+                    <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">
+                      {(
+                        feature === "Deployment & MDM" || 
+                        feature === "Security" || 
+                        feature === "Device Automation" ||
+                        feature === "Advanced Automation & Scripting" ||
+                        feature === "Identity & Access" ||
+                        feature === "Network Policies" ||
+                        feature === "App Lifecycle"
+                      ) ? (
+                        <span className="text-green-500">✅</span>
+                      ) : (
+                        <span className="text-red-500">❌</span>
+                      )}
+                    </td>
+                    <td className="px-3 py-4 text-center text-sm text-gray-700 dark:text-gray-300">
+                      <span className="text-green-500">✅</span>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 sm:py-28 lg:py-32 bg-white dark:bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-6">
+              What Our Clients Say
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Hear from businesses that have transformed their Apple device management with Skyble X.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-gray-50 dark:bg-gray-900 rounded-xl shadow-sm p-8 relative">
+                <svg className="h-8 w-8 text-sky-500 absolute top-6 left-6 opacity-25" fill="currentColor" viewBox="0 0 32 32">
+                  <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
+                </svg>
+                <div className="relative z-10">
+                  <p className="text-gray-700 dark:text-gray-300 mb-6 italic">{testimonial.quote}</p>
+                  <div className="flex items-center">
+                    <div className="h-10 w-10 rounded-full bg-sky-100 dark:bg-sky-900 flex items-center justify-center text-sky-600 dark:text-sky-400 font-semibold">
+                      {testimonial.author.split(' ')[0][0]}{testimonial.author.split(' ')[1][0]}
+                    </div>
+                    <div className="ml-3">
+                      <h4 className="font-medium text-gray-900 dark:text-white">{testimonial.author}</h4>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">{testimonial.title}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -500,6 +575,184 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Security & Data Protection Section */}
+      <section className="py-20 sm:py-28 lg:py-32 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-semibold mb-6 text-gray-900 dark:text-white">
+                Enterprise-Grade Security for Your Apple Ecosystem
+              </h2>
+              <p className="text-lg mb-8 text-gray-600 dark:text-gray-400">
+                At Skyble X, we prioritize the security of your Apple devices and data with comprehensive protection measures.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-md bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-sky-600 dark:text-sky-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">Device Encryption</h3>
+                    <p className="mt-2 text-gray-600 dark:text-gray-400">
+                      Full disk encryption for all devices ensures your data remains protected even if a device is lost or stolen.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-md bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-sky-600 dark:text-sky-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">Remote Lock & Wipe</h3>
+                    <p className="mt-2 text-gray-600 dark:text-gray-400">
+                      Instantly secure compromised devices with remote lock or complete data wipe capabilities.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-md bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-sky-600 dark:text-sky-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H5a2 2 0 00-2 2v12a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">Identity & Access Control</h3>
+                    <p className="mt-2 text-gray-600 dark:text-gray-400">
+                      Secure authentication with SSO and MFA integration, plus granular permission controls.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-10 w-10 rounded-md bg-sky-100 dark:bg-sky-900/30 flex items-center justify-center text-sky-600 dark:text-sky-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                    </svg>
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-medium text-gray-900 dark:text-white">Compliance Monitoring</h3>
+                    <p className="mt-2 text-gray-600 dark:text-gray-400">
+                      Continuous monitoring ensures all devices maintain security compliance with detailed reporting.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8">
+                <a 
+                  href="#waitlist" 
+                  className="inline-flex items-center px-5 py-3 bg-sky-600 text-white rounded-full text-sm font-medium hover:bg-sky-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+                >
+                  Learn more about our security
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div className="lg:ml-auto">
+              <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-8 border border-gray-200 dark:border-gray-700">
+                <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">Security Certifications & Compliance</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mt-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700 dark:text-gray-300">ISO 27001 Certified</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mt-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700 dark:text-gray-300">GDPR Compliant</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mt-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700 dark:text-gray-300">SOC 2 Type II Audited</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mt-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700 dark:text-gray-300">HIPAA Security Controls</span>
+                  </li>
+                  <li className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mt-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700 dark:text-gray-300">Regular Penetration Testing</span>
+                  </li>
+                </ul>
+                
+                <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                  <h4 className="font-medium mb-3 text-gray-900 dark:text-white">Data Protection Policy</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    We implement industry-leading security measures to protect your business data. Our platform is built on a secure-by-design architecture with robust access controls, encryption, and continuous monitoring.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 sm:py-28 lg:py-32 bg-white dark:bg-black">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 dark:text-white mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Find answers to common questions about Skyble X services and capabilities.
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {faqItems.map((item, index) => (
+              <div key={index} className="bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden">
+                <details className="group">
+                  <summary className="flex justify-between items-center font-medium cursor-pointer list-none p-4">
+                    <span className="text-gray-900 dark:text-white">{item.question}</span>
+                    <span className="transition group-open:rotate-180">
+                      <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24" className="text-gray-700 dark:text-gray-300">
+                        <path d="M6 9l6 6 6-6"></path>
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="px-4 pb-4 text-gray-600 dark:text-gray-400">
+                    {item.answer}
+                  </div>
+                </details>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">Still have questions?</p>
+            <a 
+              href="#waitlist" 
+              className="inline-flex items-center px-6 py-3.5 bg-sky-600 text-white rounded-full font-medium hover:bg-sky-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+            >
+              <span>Contact Our Team</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 sm:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -565,18 +818,18 @@ export default function Home() {
             <div>
               <h3 className="text-sm font-semibold text-gray-900 dark:text-white tracking-wide uppercase mb-4">Service Tiers</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">X1 - Ground Control</a></li>
-                <li><a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">X2 - Take Off</a></li>
-                <li><a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">X3 - Cruise</a></li>
-                <li><a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Enterprise Solutions</a></li>
+                <li><a href="#service-tiers" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">X1 - Ground Control</a></li>
+                <li><a href="#service-tiers" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">X2 - Take Off</a></li>
+                <li><a href="#service-tiers" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">X3 - Cruise</a></li>
+                <li><a href="#tier-comparison" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Feature Comparison</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-gray-900 dark:text-white tracking-wide uppercase mb-4">Company</h3>
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-white tracking-wide uppercase mb-4">Resources</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">About</a></li>
-                <li><a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Careers</a></li>
-                <li><a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Partners</a></li>
+                <li><a href="#features" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Features</a></li>
+                <li><a href="#testimonials" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Testimonials</a></li>
+                <li><a href="#faq" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">FAQ</a></li>
                 <li><a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Contact</a></li>
               </ul>
             </div>
@@ -585,7 +838,7 @@ export default function Home() {
             <p className="text-sm text-gray-500 dark:text-gray-400">
               © {new Date().getFullYear()} Skyble X. All rights reserved.
             </p>
-            <div className="mt-4 md:mt-0 flex space-x-6">
+            <div className="mt-4 md:mt-0 flex flex-wrap justify-center gap-x-6 gap-y-2">
               <a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Privacy Policy</a>
               <a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Terms of Service</a>
               <a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors text-sm">Cookie Policy</a>
